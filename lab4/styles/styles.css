@@ -1,17 +1,15 @@
-/* Встановлення шрифтів та загальний скид стилів */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #F8E3E9; /* Світло-рожевий фон */
+    background-color: #F8E3E9; 
     color: #4A4A4A;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* --- HEADER --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -24,10 +22,9 @@ body {
     margin: 0 auto;
 }
 
-/* Зміна: Збільшення розміру логотипу */
 .logo {
     font-weight: 600;
-    font-size: 1.5em; /* Збільшено з 1.2em */
+    font-size: 1.5em; 
 }
 
 .hamburger-menu {
@@ -47,20 +44,17 @@ body {
     border-radius: 1px;
 }
 
-/* ==================================== */
-/* MOBILE MENU STYLES                   */
-/* ==================================== */
+
 .mobile-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 65px; /* Розмістити під хедером, або налаштувати відповідно до висоти вашого хедера */
+    top: 65px; 
     right: 0;
     width: 100%;
-    background-color: #90599B; /* Фіолетовий колір фону */
+    background-color: #90599B; 
     z-index: 10;
     
-    /* Стан за замовчуванням: приховано */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
@@ -68,8 +62,7 @@ body {
 }
 
 .mobile-menu.active {
-    /* Стан "активний": показано */
-    max-height: 300px; /* Достатня висота, щоб вмістити всі посилання */
+    max-height: 300px; 
     padding: 10px 0;
 }
 
@@ -86,7 +79,6 @@ body {
     border-bottom: none;
 }
 
-/* --- HERO SECTION / MAIN TITLE --- */
 .hero-section {
     background-color: #F8E3E9;
     padding: 60px 0 30px;
@@ -100,9 +92,7 @@ body {
     margin: 0;
 }
 
-/* --- CARDS SECTION (Mobile) --- */
 .cards-section {
-    /* Зміна: Збільшено вертикальний відступ для мобільного вигляду */
     padding: 60px 8%; 
     background: linear-gradient(to bottom, #F8E3E9 0%, #F8E3E9 50%, #90599B 50%, #90599B 100%);
     display: flex;
@@ -112,16 +102,14 @@ body {
     z-index: 1;
 }
 
-/* --- CARD STYLES (Mobile First) --- */
 .card {
     background-color: white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    /* Зміна: Збільшено відступ між картками */
     margin-bottom: 40px; 
     padding: 20px;
     text-align: center;
-    max-width: 400px; /* Трохи збільшимо максимальну ширину */
+    max-width: 400px; 
     width: 100%;
 }
 
@@ -164,7 +152,6 @@ body {
     color: #90599B;
 }
 
-/* --- FOOTER --- */
 .footer {
     background-color: #333333;
     color: #999999;
@@ -179,9 +166,6 @@ body {
 }
 
 
-/* ==================================== */
-/* MEDIA QUERY - DESKTOP (>= 768px)       */
-/* ==================================== */
 @media (min-width: 768px) {
     
     .main-title {
@@ -194,17 +178,14 @@ body {
         padding: 40px 5%;
     }
     
-    /* Коригування: Гамбургер-меню приховано на десктопі */
    .hamburger-menu {
         display: none; 
     }
     
-    /* Мобільне меню також приховано на десктопі */
     .mobile-menu {
         display: none;
     }
 
-    /* Оновлення фону для десктопного вигляду */
     .cards-section {
         background: 
             linear-gradient(to bottom, 
@@ -218,7 +199,6 @@ body {
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
-        /* Зміна: Збільшено відступ між картками */
         gap: 40px; 
         padding-top: 100px;
         padding-bottom: 500px;
@@ -226,17 +206,14 @@ body {
     
     .card {
         max-width: 350px;
-        /* Видаляємо margin-bottom, оскільки використовуємо gap у flex-контейнері */
         margin-bottom: 0; 
     }
     
     .cards-section > .card:nth-child(2) {
-        /* Стиль для центральної картки (Faster Prototyping) */
         transform: translateY(100px); 
     }
 
     .cards-section > .card:nth-child(3) {
-        /* Стиль для центральної картки (Faster Prototyping) */
         transform: translateY(200px); 
     }
     
