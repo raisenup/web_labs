@@ -1,0 +1,81 @@
+/* Flexbox-based layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.item {
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #000;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+
+.one {
+  flex: 1;
+  background: #D9A299;
+  justify-content: space-between;
+}
+
+.two {
+  flex: 1;
+  background: #DCC5B2;
+  align-items: center;
+  justify-content: right;
+}
+
+.three {
+  flex: 2;
+  background: #FAF7F3;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info {
+  display: flex;
+  flex: 10;
+  flex-direction: row;
+  width: 100%;
+}
+
+.four {
+  height: 50%;
+  background: #F0E4D3;
+}
+
+.five {
+  height: 50%;
+  background: #DCC5B2;
+}
+
+.rsidebar {
+  flex-direction: column;
+  flex: 1;
+}
+
+
+.six {
+  flex: 1;
+  background: #D9A299;
+  justify-content: space-between;
+}
+
+.x,
+.y {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #000;
+  margin: 5px;
+}

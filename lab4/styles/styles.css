@@ -1,0 +1,248 @@
+/* Встановлення шрифтів та загальний скид стилів */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F8E3E9; /* Світло-рожевий фон */
+    color: #4A4A4A;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #F8E3E9;
+    color: #A96899;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Зміна: Збільшення розміру логотипу */
+.logo {
+    font-weight: 600;
+    font-size: 1.5em; /* Збільшено з 1.2em */
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #A96899;
+    border-radius: 1px;
+}
+
+/* ==================================== */
+/* MOBILE MENU STYLES                   */
+/* ==================================== */
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 65px; /* Розмістити під хедером, або налаштувати відповідно до висоти вашого хедера */
+    right: 0;
+    width: 100%;
+    background-color: #90599B; /* Фіолетовий колір фону */
+    z-index: 10;
+    
+    /* Стан за замовчуванням: приховано */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0;
+}
+
+.mobile-menu.active {
+    /* Стан "активний": показано */
+    max-height: 300px; /* Достатня висота, щоб вмістити всі посилання */
+    padding: 10px 0;
+}
+
+.mobile-menu a {
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+/* --- HERO SECTION / MAIN TITLE --- */
+.hero-section {
+    background-color: #F8E3E9;
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #A96899;
+    margin: 0;
+}
+
+/* --- CARDS SECTION (Mobile) --- */
+.cards-section {
+    /* Зміна: Збільшено вертикальний відступ для мобільного вигляду */
+    padding: 60px 8%; 
+    background: linear-gradient(to bottom, #F8E3E9 0%, #F8E3E9 50%, #90599B 50%, #90599B 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- CARD STYLES (Mobile First) --- */
+.card {
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* Зміна: Збільшено відступ між картками */
+    margin-bottom: 40px; 
+    padding: 20px;
+    text-align: center;
+    max-width: 400px; /* Трохи збільшимо максимальну ширину */
+    width: 100%;
+}
+
+.card-image-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-title {
+    color: #4A4A4A;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.card-text {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.learn-more {
+    color: #A96899;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.learn-more:hover {
+    color: #90599B;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #333333;
+    color: #999999;
+    text-align: center;
+    padding: 15px 5%;
+    font-size: 0.8em;
+    margin-top: auto;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+
+/* ==================================== */
+/* MEDIA QUERY - DESKTOP (>= 768px)       */
+/* ==================================== */
+@media (min-width: 768px) {
+    
+    .main-title {
+        padding-top: 50px;
+        font-size: 3.5em;
+    }
+    
+    .header {
+        max-width: 1400px;
+        padding: 40px 5%;
+    }
+    
+    /* Коригування: Гамбургер-меню приховано на десктопі */
+   .hamburger-menu {
+        display: none; 
+    }
+    
+    /* Мобільне меню також приховано на десктопі */
+    .mobile-menu {
+        display: none;
+    }
+
+    /* Оновлення фону для десктопного вигляду */
+    .cards-section {
+        background: 
+            linear-gradient(to bottom, 
+                #F8E3E9 0%, 
+                #F8E3E9 300px, 
+                #90599B 300px, 
+                #90599B 600px, 
+                #F8E3E9 600px, 
+                #F8E3E9 100%
+            );
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        /* Зміна: Збільшено відступ між картками */
+        gap: 40px; 
+        padding-top: 100px;
+        padding-bottom: 500px;
+    }
+    
+    .card {
+        max-width: 350px;
+        /* Видаляємо margin-bottom, оскільки використовуємо gap у flex-контейнері */
+        margin-bottom: 0; 
+    }
+    
+    .cards-section > .card:nth-child(2) {
+        /* Стиль для центральної картки (Faster Prototyping) */
+        transform: translateY(100px); 
+    }
+
+    .cards-section > .card:nth-child(3) {
+        /* Стиль для центральної картки (Faster Prototyping) */
+        transform: translateY(200px); 
+    }
+    
+    .card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

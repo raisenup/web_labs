@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Labs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            color: #333;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .labs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .lab-card {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .lab-header {
+            background: linear-gradient(135deg, #87ceeb 0%, #4da6d6 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .lab-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .lab-title {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .lab-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lab-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .lab-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #87ceeb 0%, #5b9fd6 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 1em;
+            font-weight: 600;
+            text-align: center;
+            margin-top: auto;
+            border: none;
+            cursor: pointer;
+        }
+
+        .lab-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(135, 206, 235, 0.5);
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            padding: 20px;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .labs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Web Labs</h1>
+            <p>Колекція веб-лабораторних робіт</p>
+        </div>
+
+        <div class="labs-grid">
+            <!-- Лабораторна 1 -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-number">1</div>
+                    <div class="lab-title">Розробка HTML-структур та візуалізація з допомогою CSS</div>
+                </div>
+                <div class="lab-content">
+                    <p class="lab-description">
+                        Ознайомлення з мовою розмітки гіпертексту HTML та базовими засобами CSS для візуалізації вебсторінок.
+                    </p>
+                    <a href="lab1/index.html" class="lab-link">Переглянути →</a>
+                </div>
+            </div>
+
+            <!-- Лабораторна 2 -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-number">2</div>
+                    <div class="lab-title">Верстка вебсторінок за допомогою CSS</div>
+                </div>
+                <div class="lab-content">
+                    <p class="lab-description">
+                        Ознайомлення з мовою візуального оформлення CSS та освоєння сучасних способів верстки вебсторінок.
+                    </p>
+                    <a href="lab2/index.html" class="lab-link">Переглянути →</a>
+                </div>
+            </div>
+
+            <!-- Лабораторна 3 -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-number">3</div>
+                    <div class="lab-title">Розробка поштової та мобільної версії вебсторінки</div>
+                </div>
+                <div class="lab-content">
+                    <p class="lab-description">
+                        Освоєння верстки поштової та мобільної версії вебсторінки, виявлення особливостей функціонування вебсторінок для мобільних пристроїв та поштових програм.  </p>
+                    <a href="lab3/index.html" class="lab-link">Переглянути →</a>
+                </div>
+            </div>
+
+            <!-- Лабораторна 4 -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-number">4</div>
+                    <div class="lab-title">Верстка вебсторінки на основі графічного дизайну</div>
+                </div>
+                <div class="lab-content">
+                    <p class="lab-description">
+                        Набуття навичок верстки вебсторінок із підготовлених графічних макетів дизайну вебсторінки.
+                    </p>
+                    <a href="lab4/index.html" class="lab-link">Переглянути →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Web Labs. Усі права захищені.</p>
+        </div>
+    </div>
+</body>
+</html>

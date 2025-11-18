@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Template</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">logo</div>
+        <div class="hamburger-menu" id="hamburger"> 
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+    
+    <nav class="mobile-menu" id="mobile-menu">
+        <a href="#">App Development</a>
+        <a href="#">Prototyping</a>
+        <a href="#">Web Design</a>
+        <a href="#">Contact</a>
+    </nav>
+    
+    <main>
+        <div class="hero-section">
+            <h1 class="main-title">Software Development</h1>
+        </div>
+        
+        <div class="cards-section">
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="img/image1.png" alt="App Development Image" class="card-image">
+                </div>
+                <h2 class="card-title">App Development</h2>
+                <p class="card-text">Etiam erat velit scelerisque in dictum non consectetur. Nisl purus in mollis nunc sed id semper. Cras fermentum odio eu feugiat pretium nibh ipsum. Tristique senectus.</p>
+                <a href="#" class="learn-more">Learn more →</a>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="img/image2.png" class="card-image">
+                </div>
+                <h2 class="card-title">Faster Prototyping</h2>
+                <p class="card-text">Etiam erat velit scelerisque in dictum non consectetur. Nisl purus in mollis nunc sed id semper. Cras fermentum odio eu feugiat pretium nibh ipsum. Tristique senectus.</p>
+                <a href="#" class="learn-more">Learn more →</a>
+            </div>
+
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="img/image3.png" alt="Web Design Image" class="card-image">
+                </div>
+                <h2 class="card-title">Web Design</h2>
+                <p class="card-text">Etiam erat velit scelerisque in dictum non consectetur. Nisl purus in mollis nunc sed id semper. Cras fermentum odio eu feugiat pretium nibh ipsum. Tristique senectus.</p>
+                <a href="#" class="learn-more">Learn more →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+    </footer>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+            // Додатково можна змінити вигляд іконки "гамбургера"
+            this.classList.toggle('is-open'); 
+        });
+    </script>
+
+</body>
+</html>
