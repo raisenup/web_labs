@@ -58,42 +58,90 @@ window.addEventListener('load', function() {
 });
 
 // 5
-let listItems = [];
-
-document.querySelectorAll('.item').forEach(item => {
-    item.addEventListener('dblclick', function() {
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.placeholder = 'Введіть пункт списку';
-        const button = document.createElement('button');
-        button.textContent = 'Додати';
-        button.onclick = function() {
-            const value = input.value.trim();
-            if (value) {
-                listItems.push(value);
-                input.value = '';
-            }
-        };
-        const saveButton = document.createElement('button');
-        saveButton.textContent = 'Зберегти список';
-        saveButton.onclick = function() {
-            localStorage.setItem('listItems', JSON.stringify(listItems));
-            const ul = document.createElement('ul');
-            listItems.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                ul.appendChild(li);
-            });
-            item.innerHTML = '';
-            item.appendChild(ul);
-        };
-        item.appendChild(input);
-        item.appendChild(button);
-        item.appendChild(saveButton);
-    });
-});
-
 window.addEventListener('beforeunload', function() {
     localStorage.removeItem('listItems');
 });
 
+document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('dblclick', function() {
+        if (item.querySelector('.list-creator-form')) {
+            return;
+        }
+
+        let currentListItems = [];
+
+        const formContainer = document.createElement('div');
+        formContainer.className = 'list-creator-form';
+        formContainer.style.marginTop = '10px';
+        formContainer.style.border = '2px dashed #555';
+        formContainer.style.padding = '10px';
+        formContainer.style.backgroundColor = 'rgba(255,255,255,0.8)';
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Введіть пункт списку';
+        input.style.marginRight = '5px';
+
+        const addButton = document.createElement('button');
+        addButton.textContent = 'Додати пункт';
+        addButton.style.marginRight = '5px';
+
+        const previewTitle = document.createElement('p');
+        previewTitle.textContent = 'Попередній перегляд списку:';
+        previewTitle.style.fontWeight = 'bold';
+        previewTitle.style.margin = '5px 0';
+        previewTitle.style.display = 'none'; 
+
+        const previewUl = document.createElement('ul');
+        previewUl.style.textAlign = 'left'; 
+
+        addButton.onclick = function() {
+            const value = input.value.trim();
+            if (value) {
+                currentListItems.push(value);
+                
+                const li = document.createElement('li');
+                li.textContent = value;
+                previewUl.appendChild(li);
+                
+                previewTitle.style.display = 'block';
+                
+                input.value = '';
+                input.focus();
+            }
+        };
+
+        const saveButton = document.createElement('button');
+        saveButton.textContent = 'Зберегти список';
+        saveButton.style.marginTop = '10px';
+        saveButton.style.display = 'block'; 
+        
+        saveButton.onclick = function() {
+            if (currentListItems.length === 0) {
+                alert("Список порожній!");
+                return;
+            }
+
+
+            localStorage.setItem('listItems', JSON.stringify(currentListItems));
+
+            const finalUl = document.createElement('ul');
+            currentListItems.forEach(itemText => {
+                const li = document.createElement('li');
+                li.textContent = itemText;
+                finalUl.appendChild(li);
+            });
+
+            item.innerHTML = '';
+            item.appendChild(finalUl);
+        };
+
+        formContainer.appendChild(input);
+        formContainer.appendChild(addButton);
+        formContainer.appendChild(previewTitle);
+        formContainer.appendChild(previewUl);  
+        formContainer.appendChild(saveButton);
+
+        item.appendChild(formContainer);
+    });
+});
