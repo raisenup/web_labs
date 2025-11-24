@@ -1,68 +1,93 @@
-/* Grid-based layout */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    box-sizing: border-box;
 }
 
 .item {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    font-size: 18px;
-    border: 1px solid #000;
     box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #000;
+    font-size: 18px;
 }
 
 .one {
-    grid-column: 1 / 4;
     background: #D9A299;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
+.main-body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    flex: 1;
+}
+
 .two {
-    grid-column: 1 / 2;
-    grid-row: 2 / 4;
     background: #DCC5B2;
-    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.two ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.two li {
+    padding: 5px 10px;
+    text-align: right;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-area {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    flex: 1;
 }
 
 .three {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
     background: #FAF7F3;
+    display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+.sidebar-right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
 .four {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
     background: #F0E4D3;
 }
 
 .five {
-    grid-column: 3 / 4;
-    grid-row: 3 / 3;
     background: #DCC5B2;
 }
 
 .six {
-    grid-column: 2 / 4;
-    grid-row: 3 / 4;
     background: #D9A299;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.x,
-.y {
+.x, .y {
     background: #fff;
     padding: 10px;
     border: 1px solid #000;
@@ -70,20 +95,27 @@ body {
 }
 
 @media (max-width: 800px) {
-    .container {
+    .main-body {
         grid-template-columns: 1fr;
-        grid-auto-rows: auto;
+    }
+    
+    .content-area {
+        grid-template-columns: 1fr;
     }
 
-    .two,
-    .four,
-    .five {
-        grid-column: 1 / 2;
-        grid-row: auto;
+    .sidebar-right {
+        display: flex;
+        flex-direction: column;
     }
 
-    .three,
-    .six {
-        grid-column: 1 / 2;
+    .two {
+        order: 1; 
+        justify-content: flex-start;
+        align-items: center;
     }
+    .two li {
+        text-align: center;
+    }
+    .content-area { order: 2; }
+    .six { order: 3; }
 }
