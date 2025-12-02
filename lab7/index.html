@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7 - Variant 2</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="item one"><div class="x"><h1>Lab 7</h1></div> Variant 2 </div>
+        <div class="item two">
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+            </ul>
+        </div>
+        
+        <div class="item three">
+            <h2>Керування анімацією</h2>
+            <p>Натисніть Play, щоб відкрити робоче вікно.</p>
+            <button id="playBtn" class="main-btn">Play</button>
+
+            <div id="resultsTableContainer" style="display:none; margin-top: 20px; width: 100%;">
+                <h3>Логи подій (Server vs LocalStorage)</h3>
+                <table border="1" style="width:100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Подія</th>
+                            <th>Час (Server)</th>
+                            <th>Час (Local)</th>
+                            <th>Різниця (мс)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="item four">Блок 4</div>
+        <div class="item five">Блок 5</div>
+        <div class="item six"><div class="y"><h2>Scienta vines</h2></div></div>
+    </div>
+
+    <div id="work" class="work-overlay">
+        <div class="controls">
+            <div class="msg-log" id="msgLog">Очікування...</div>
+            <div class="buttons-area">
+                <button id="startBtn">Start</button>
+                <button id="stopBtn" style="display:none;">Stop</button>
+                <button id="reloadBtn" style="display:none;">Reload</button>
+                <button id="closeBtn">Close</button>
+            </div>
+        </div>
+        <div id="anim" class="anim-area"></div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

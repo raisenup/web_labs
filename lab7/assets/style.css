@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.item {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.one { grid-column: 1 / 4; background: #D9A299; justify-content: space-between; }
+.two { grid-column: 1 / 2; grid-row: 2 / 5; background: #DCC5B2; justify-content: flex-end; align-items: flex-start; }
+.three { 
+    grid-column: 2 / 3; grid-row: 2 / 4; background: #FAF7F3; 
+    flex-direction: column; justify-content: flex-start; align-items: flex-start;
+    overflow: auto; 
+}
+.four { grid-column: 3 / 4; grid-row: 2 / 3; background: #F0E4D3; }
+.five { grid-column: 3 / 4; grid-row: 3 / 4; background: #DCC5B2; }
+.six { grid-column: 2 / 4; grid-row: 4 / 5; background: #D9A299; justify-content: space-between; }
+
+.x, .y { background: #fff; padding: 10px; border: 1px solid #000; margin: 5px; }
+.item ul { list-style: none; padding: 0; width: 100%; text-align: right; }
+.item li { margin-bottom: 10px; }
+.item a { text-decoration: none; color: black; font-weight: bold; }
+
+
+.work-overlay {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #333;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    flex-direction: column;
+}
+
+.controls {
+    height: 50px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+}
+
+.anim-area {
+    position: relative;
+    width: calc(100% - 10px); 
+    height: calc(100% - 50px); 
+    margin: 0 auto;
+    border: 5px solid blue; 
+    box-sizing: border-box;
+    background-image: url('bg.png'); 
+    background-size: cover;
+    background-repeat: round;
+    overflow: hidden;
+}
+
+.msg-log {
+    font-size: 14px;
+    font-family: monospace;
+    color: #333;
+}
+
+.buttons-area button {
+    padding: 5px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.main-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.ball {
+    position: absolute;
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%;
+}
